@@ -22,10 +22,10 @@ public class ThereAndBackAgain
 		
 		
 		
+			
 		
-		
-		
-		System.out.println();
+		gimli.travel(50);
+		System.out.println(gimli.getDistanceTraveled());
 
 	}
 
