@@ -39,6 +39,7 @@ public class FracCalc {
     }
     
     public static String addFrac(FracCalc frac1, FracCalc frac2) {
+    	return "1";
     }
     
     public static String subtractFrac(FracCalc frac1, FracCalc frac2) {
