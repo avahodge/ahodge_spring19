@@ -9,6 +9,7 @@ public class ThereAndBackAgain
 		Hobbit frodo = new Hobbit("Frodo");
 		Hobbit sam = new Hobbit("Sam");
 		Dwarf gimli = new Dwarf("Gimli");
+		Traveler[] party1 = {frodo, sam, gimli};
 		
 		// Create a traveling party called party1 by creating an array of Travelers 
 		// and filling it with frodo, sam, and gimli
@@ -24,9 +25,13 @@ public class ThereAndBackAgain
 		
 			
 		
-		gimli.travel(50);
-		System.out.println(gimli.getDistanceTraveled());
-
+		for(int i = 0; i < 50; i++) {
+			
+		}
+		System.out.println("Frodo has traveled " + frodo.getDistanceTraveled() + " miles.");
+		System.out.println("Sam has traveled " + sam.getDistanceTraveled() + " miles.");
+		System.out.println("Gimli has traveled " + gimli.getDistanceTraveled() + " miles.");
+		
 	}
 
 	

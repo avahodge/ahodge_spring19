@@ -6,7 +6,7 @@ public class Hobbit extends Traveler
 	//Hobbits travel just like any other Traveler. Do they need a travel method?  
 	//  Try it without and find out.  =]  
 	
-	private boolean ringObsessed;
+	private boolean ringObsessed = false;
 	
 	public Hobbit(String name) {
 		super(name);
