@@ -5,29 +5,6 @@ import java.util.*;
 
 public class FracCalc {
 	
-	private int wholeNum;
-	private int numerator;
-	private int denominator;
-	private int improperFracNumerator;
-	
-	public FracCalc(String originalFrac) {
-		if(originalFrac.charAt(1) == '_') {
-			wholeNum = Integer.valueOf(originalFrac.charAt(0));
-			improperFracNumerator = numerator * wholeNum;
-		} else {
-			wholeNum = 0;
-			improperFracNumerator = numerator;
-		}
-		if(originalFrac.charAt(1) == '/') {
-			numerator = Integer.valueOf(originalFrac.charAt(0));
-			denominator = Integer.valueOf(originalFrac.charAt(2));
-		} else {
-			numerator = Integer.valueOf(originalFrac.charAt(2));
-			denominator = Integer.valueOf(originalFrac.charAt(4));
-		}
-		
-	}
-	
     public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please type an expression with fractions or mixed numbers.");
@@ -38,19 +15,6 @@ public class FracCalc {
 
     }
     
-    public static String addFrac(FracCalc frac1, FracCalc frac2) {
-    	return "1";
-    }
-    
-    public static String subtractFrac(FracCalc frac1, FracCalc frac2) {
-    	return "1";
-    }
-    
-    public static String multiplyFrac(FracCalc frac1, FracCalc frac2) {
-    	String finalNumerator = String.valueOf(frac1.improperFracNumerator * frac2.improperFracNumerator);
-    	String finalDenom = String.valueOf(frac1.denominator * frac2.denominator);
-    	return finalNumerator + "/" + finalDenom;
-    }
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
     // This function takes a String 'input' and produces the result
@@ -63,16 +27,17 @@ public class FracCalc {
     public static String produceAnswer(String input) {
     	
     	String[] expression = input.split(" ");
-    	FracCalc fraction1 = new FracCalc(expression[0]);
-    	FracCalc fraction2 = new FracCalc(expression[2]);
+    	Fraction frac1 = new Fraction(expression[0]);
+    	Fraction frac2 = new Fraction(expression[2]);
     	if(expression[1].equals("+")) {
-    		return FracCalc.addFrac(fraction1, fraction2);
+    		//return frac1.addFrac(frac2).toString();
+    		return "1";
     	}
     	else if(expression[1].equals("-")) {
     		return "1";
     	}
     	else if(expression[1].equals("*")) {
-    		return FracCalc.multiplyFrac(fraction1, fraction2);
+    		return frac1.multiplyFrac(frac2).toString();
     	}
     	else if(expression[1].equals("/")) {
     		return "1";
