@@ -31,13 +31,13 @@ public class FracCalc {
     	Fraction frac2 = new Fraction(expression[2]);
     	if(expression[1].equals("+")) {
     		//return frac1.addFrac(frac2).toString();
-    		return "1";
+    		return frac1.addFrac(frac2);
     	}
     	else if(expression[1].equals("-")) {
-    		return "1";
+    		return frac1.subtractFrac(frac2);
     	}
     	else if(expression[1].equals("*")) {
-    		return frac1.multiplyFrac(frac2).toString();
+    		return frac1.multiplyFrac(frac2);
     	}
     	else if(expression[1].equals("/")) {
     		return "1";
