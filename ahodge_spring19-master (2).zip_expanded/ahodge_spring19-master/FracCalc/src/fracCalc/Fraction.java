@@ -29,14 +29,14 @@ public class Fraction {
 		denominator = 1;
 	}
 	
-	 public static String addFrac(Fraction frac2) {
+	 public String addFrac(Fraction frac2) {
 		 Fraction answerFrac = new Fraction();
-	 answerFrac.numerator = (numerator * frac2.denominator) + (frac2.numerator * denominator);
-	 answerFrac.denominator = (denominator * frac2.denominator);
-	 return answerFrac.toString();
+		 answerFrac.numerator = (numerator * frac2.denominator) + (frac2.numerator * denominator);
+		 answerFrac.denominator = (denominator * frac2.denominator);
+		 return answerFrac.toString();
 	    }
 	    
-	    public static String subtractFrac(Fraction frac2) {
+	    public String subtractFrac(Fraction frac2) {
 	    	Fraction answerFrac = new Fraction();
 	    	answerFrac.numerator = (numerator * frac2.denominator) - (frac2.numerator * denominator);
 	    	answerFrac.denominator = (denominator * frac2.denominator);
