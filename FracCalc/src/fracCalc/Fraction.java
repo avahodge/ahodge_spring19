@@ -7,20 +7,20 @@ public class Fraction {
 	
 	public Fraction(String originalFrac) {
 		if(originalFrac.indexOf('_') != -1) {
-			new String afterWholeNum = originalFrac.substring(originalFrac.indexOf('_'), (originalFrac.length() - 1);
-			numerator = Integer.valueOf(afterwholeNum.charAt(1));
+			String willBecomeNumerator = originalFrac.substring(originalFrac.indexOf('_'), (originalFrac.indexOf('/') - 1));
+			numerator = Integer.valueOf(willBecomeNumerator) * (wholeNum * denominator);
+			String willBecomeDenom = originalFrac.substring(originalFrac.indexOf('/'), (originalFrac.length() - 1));
+			denominator = Integer.valueOf(willBecomeDenom);
+			String willBecomeWhole = originalFrac.substring(0, originalFrac.indexOf('_'));
+			wholeNum = Integer.valueOf(willBecomeWhole);
 			//wholeNum = Integer.valueOf(originalFrac.charAt(0));
 		} else {
 			wholeNum = 0;
+			String willBecomeNumerator = originalFrac.substring(0, originalFrac.indexOf('/') - 1);
+			numerator = Integer.valueOf(willBecomeNumerator);
+			String willBecomeDenom = originalFrac.substring(originalFrac.indexOf('/'), (originalFrac.length() - 1));
+			denominator = Integer.valueOf(willBecomeDenom);
 		}
-		if(originalFrac.charAt(1) == '/') {
-			numerator = Integer.valueOf(originalFrac.charAt(0));
-			denominator = Integer.valueOf(originalFrac.charAt(2));
-		} else {
-			numerator = Integer.valueOf(originalFrac.charAt(2));
-			denominator = Integer.valueOf(originalFrac.charAt(4));
-		}
-		
 	}
 	
 	public Fraction() {
@@ -28,27 +28,37 @@ public class Fraction {
 		numerator = 0;
 		denominator = 1;
 	}
-	/*
-	 public static Fraction addFrac(Fraction frac2) {
-	 answerFrac.numerator = (answerFrac.numerator * frac2.denominator) + (frac2.numerator * answerFrac.denominator);
-	    	return this;
+	
+	 public String addFrac(Fraction frac2) {
+		 Fraction answerFrac = new Fraction();
+		 answerFrac.numerator = (numerator * frac2.denominator) + (frac2.numerator * denominator);
+		 answerFrac.denominator = (denominator * frac2.denominator);
+		 return answerFrac.toString();
 	    }
 	    
-	    public static Fraction subtractFrac(Fraction frac2) {
-	    	return this;
+	    public String subtractFrac(Fraction frac2) {
+	    	Fraction answerFrac = new Fraction();
+	    	answerFrac.numerator = (numerator * frac2.denominator) - (frac2.numerator * denominator);
+	    	answerFrac.denominator = (denominator * frac2.denominator);
+	    	return answerFrac.toString();
 	    }
-	  
-	    */
 	
-	    public Fraction multiplyFrac(Fraction frac2) {
+	    public String multiplyFrac(Fraction frac2) {
 	    	Fraction answerFrac = new Fraction();
 	    	answerFrac.numerator = numerator * frac2.numerator;
 	    	answerFrac.denominator = denominator * frac2.denominator;
-	    	return answerFrac;
+	    	return answerFrac.toString();
+	    }
+	    
+	    public String divideFrac(Fraction frac2) {
+	    	Fraction answerFrac = new Fraction();
+	    	answerFrac.numerator = numerator * frac2.denominator;
+	    	answerFrac.denominator = denominator * frac2.numerator;
+	    	return answerFrac.toString();
 	    }
 	    
 	    public String toString() {
-	    	return wholeNum + "_" + numerator + "/" + denominator;
+	    	return numerator + "/" + denominator;
 	    }
 
 }
