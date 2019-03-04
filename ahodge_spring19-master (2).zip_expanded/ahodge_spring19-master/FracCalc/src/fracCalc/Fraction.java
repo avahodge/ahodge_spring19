@@ -7,7 +7,7 @@ public class Fraction {
 	
 	public Fraction(String originalFrac) {
 		if(originalFrac.indexOf('_') != -1) {
-			String willBecomeNumerator = originalFrac.substring(originalFrac.indexOf('_'), originalFrac.indexOf('/'));
+			String willBecomeNumerator = originalFrac.substring(originalFrac.indexOf('_'), (originalFrac.indexOf('/') - 1));
 			numerator = Integer.valueOf(willBecomeNumerator) * (wholeNum * denominator);
 			String willBecomeDenom = originalFrac.substring(originalFrac.indexOf('/'), (originalFrac.length() - 1));
 			denominator = Integer.valueOf(willBecomeDenom);
@@ -16,7 +16,7 @@ public class Fraction {
 			//wholeNum = Integer.valueOf(originalFrac.charAt(0));
 		} else {
 			wholeNum = 0;
-			String willBecomeNumerator = originalFrac.substring(0, originalFrac.indexOf('/'));
+			String willBecomeNumerator = originalFrac.substring(0, originalFrac.indexOf('/') - 1);
 			numerator = Integer.valueOf(willBecomeNumerator);
 			String willBecomeDenom = originalFrac.substring(originalFrac.indexOf('/'), (originalFrac.length() - 1));
 			denominator = Integer.valueOf(willBecomeDenom);
