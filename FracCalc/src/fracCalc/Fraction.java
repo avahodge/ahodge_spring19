@@ -7,19 +7,18 @@ public class Fraction {
 	
 	public Fraction(String originalFrac) {
 		if(originalFrac.indexOf('_') != -1) {
-			String willBecomeNumerator = originalFrac.substring(originalFrac.indexOf('_'), (originalFrac.indexOf('/') - 1));
-			numerator = Integer.valueOf(willBecomeNumerator) * (wholeNum * denominator);
-			String willBecomeDenom = originalFrac.substring(originalFrac.indexOf('/'), (originalFrac.length() - 1));
-			denominator = Integer.valueOf(willBecomeDenom);
+			String willBecomeNumerator = originalFrac.substring(originalFrac.indexOf('_') + 1, originalFrac.indexOf('/'));
+			numerator = Integer.parseInt(willBecomeNumerator);
+			String willBecomeDenom = originalFrac.substring(originalFrac.indexOf('/') + 1);
+			denominator = Integer.parseInt(willBecomeDenom);
 			String willBecomeWhole = originalFrac.substring(0, originalFrac.indexOf('_'));
-			wholeNum = Integer.valueOf(willBecomeWhole);
-			//wholeNum = Integer.valueOf(originalFrac.charAt(0));
+			wholeNum = Integer.parseInt(willBecomeWhole);
 		} else {
 			wholeNum = 0;
-			String willBecomeNumerator = originalFrac.substring(0, originalFrac.indexOf('/') - 1);
-			numerator = Integer.valueOf(willBecomeNumerator);
-			String willBecomeDenom = originalFrac.substring(originalFrac.indexOf('/'), (originalFrac.length() - 1));
-			denominator = Integer.valueOf(willBecomeDenom);
+			String willBecomeNumerator = originalFrac.substring(0, originalFrac.indexOf('/'));
+			numerator = Integer.parseInt(willBecomeNumerator);
+			String willBecomeDenom = originalFrac.substring(originalFrac.indexOf('/') + 1);
+			denominator = Integer.parseInt(willBecomeDenom);
 		}
 	}
 	
@@ -62,3 +61,4 @@ public class Fraction {
 	    }
 
 }
+
