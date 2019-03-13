@@ -32,32 +32,42 @@ public class Fraction {
 		 Fraction answerFrac = new Fraction();
 		 answerFrac.numerator = (numerator * frac2.denominator) + (frac2.numerator * denominator);
 		 answerFrac.denominator = (denominator * frac2.denominator);
-		 return answerFrac.toString();
+		 return answerFrac.toStringSimplify();
 	    }
 	    
 	    public String subtractFrac(Fraction frac2) {
 	    	Fraction answerFrac = new Fraction();
 	    	answerFrac.numerator = (numerator * frac2.denominator) - (frac2.numerator * denominator);
 	    	answerFrac.denominator = (denominator * frac2.denominator);
-	    	return answerFrac.toString();
+	    	return answerFrac.toStringSimplify();
 	    }
 	
 	    public String multiplyFrac(Fraction frac2) {
 	    	Fraction answerFrac = new Fraction();
 	    	answerFrac.numerator = numerator * frac2.numerator;
 	    	answerFrac.denominator = denominator * frac2.denominator;
-	    	return answerFrac.toString();
+	    	return answerFrac.toStringSimplify();
 	    }
 	    
 	    public String divideFrac(Fraction frac2) {
 	    	Fraction answerFrac = new Fraction();
 	    	answerFrac.numerator = numerator * frac2.denominator;
 	    	answerFrac.denominator = denominator * frac2.numerator;
-	    	return answerFrac.toString();
+	    	return answerFrac.toStringSimplify();
 	    }
 	    
-	    public String toString() {
-	    	return numerator + "/" + denominator;
+	    public String toStringSimplify() {
+	    	if(numerator > denominator) {
+	    	return numerator + "/" + denominator;	
+	    	} else {
+	    		wholeNum = numerator / denominator;
+	    		numerator = numerator % denominator;
+	    		if(numerator == 0) {
+	    			return String.valueOf(wholeNum);
+	    		} else {
+	    			return wholeNum + "_" + numerator + "/" + denominator;
+	    		}
+	    	}
 	    }
 
 }
