@@ -2,8 +2,10 @@ package textExcel;
 
 //Update this file with your own code.
 
-public class SpreadsheetLocation implements Location
-{
+public class SpreadsheetLocation implements Location {
+	private int row;
+	private int col;
+	
     @Override
     public int getRow()
     {
@@ -20,7 +22,7 @@ public class SpreadsheetLocation implements Location
     
     public SpreadsheetLocation(String cellName)
     {
-        // TODO: Fill this out with your own code
+    	//code here
     }
 
 }
