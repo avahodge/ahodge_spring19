@@ -9,20 +9,23 @@ public class SpreadsheetLocation implements Location {
     @Override
     public int getRow()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        row = theRow - 'A';
+        return row;
     }
 
     @Override
     public int getCol()
     {
         // TODO Auto-generated method stub
-        return 0;
+        return col;
     }
     
     public SpreadsheetLocation(String cellName)
     {
-    	//code here
+    	String theRow = cellName.substring(0, 1);
+    	String theCol = cellName.substring(1);
     }
 
 }
+
+//Takes letter + number like A2 and returns row and column
