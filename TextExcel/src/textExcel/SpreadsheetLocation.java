@@ -9,14 +9,14 @@ public class SpreadsheetLocation implements Location {
     @Override
     public int getRow()
     {
-        row = theRow - 'A';
+        row =  - 'A';
         return row;
     }
 
     @Override
     public int getCol()
     {
-        // TODO Auto-generated method stub
+        col = Integer.parseInt(theCol) - 'A';
         return col;
     }
     
